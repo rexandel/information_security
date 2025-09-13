@@ -1,21 +1,15 @@
 ﻿#include <iostream>
 #include <string>
 
-static std::string getAlphabet() {
+static std::string getAlphabet(int k) {
     std::string alphabet = "";
-    
-    int startBigChar = 65;
-    int endBigChar = 90;
 
-    for (int character = startBigChar; character < endBigChar; character++) {
-        alphabet += (char)character;
+    for (char c = 'A'; c <= 'Z' && k > 0; c++, k--) {
+        alphabet += c;
     }
 
-    int startSmallChar = 97;
-    int endSmallChar = 122;
-
-    for (int character = startSmallChar; character < endSmallChar; character++) {
-        alphabet += (char)character;
+    for (char c = 'a'; c <= 'z' && k > 0; c++, k--) {
+        alphabet += c;
     }
 
     return alphabet;
@@ -23,6 +17,7 @@ static std::string getAlphabet() {
 
 int main()
 {
-    std::cout << getAlphabet();
+    std::string alphabet = getAlphabet(27);
+    std::cout << alphabet;
     return 0;
 }
