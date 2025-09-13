@@ -14,11 +14,14 @@
 *.vcxproj
 *.vcxproj.filters
 *.vcxproj.user
+*.vspscc
+*.vssscc
 *.sln
 *.suo
 *.sdf
 *.opensdf
 *.vcxproj.FileListAbsolute.txt
+.vs/
 
 [Bb]uild/
 [Bb]uild*/
