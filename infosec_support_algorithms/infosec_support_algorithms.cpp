@@ -23,7 +23,7 @@ int main()
 
     if (count_of_characters_in_alphabet > 52 || count_of_characters_in_alphabet < 1) {
         std::cout << "Count of characters in alphabet is incorrect" << std::endl;
-        return 0;
+        return 1;
     }
 
     std::string alphabet = get_alphabet(count_of_characters_in_alphabet);
@@ -33,15 +33,15 @@ int main()
     std::cout << "Enter encryption string: ";
     std::cin >> encryption_string;
 
-    if (encryption_string.size() > pow(10, 6) || encryption_string.size() < 1) {
+    if (encryption_string.size() > 1000000 || encryption_string.size() < 1) {
         std::cout << "Incorrect count of characters in encryption string" << std::endl;
-        return 0;
+        return 1;
     }
     else {
         for (auto c : encryption_string) {
             if (alphabet.find(c) == std::string::npos) {
                 std::cout << "Encryption string contains characters that are not in current alphabet" << std::endl;
-                return 0;
+                return 1;
             }
         }
     }
